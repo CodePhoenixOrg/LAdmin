@@ -1,4 +1,12 @@
+<?php
+namespace Ladmin\Controllers;
 
+use Phoenix\Web\UI\TControl;
+
+class Master extends TControl
+{
+    
+       	public function createObjects() {	}	public function declareObjects() {	}	public function displayHtml() {?>
     <!-- Navbar
     ================================================== -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -118,3 +126,4 @@
 
 
    
+<?php	}}

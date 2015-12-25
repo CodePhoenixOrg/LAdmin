@@ -6,7 +6,7 @@ namespace Detroit\Controllers;
  *
  * @author david
  */
-class Login extends \Phoenix\MVC\TController {
+class Login extends \Phoenix\Web\UI\TControl {
     //put your code here
     
     private $_login = '';
@@ -68,5 +68,17 @@ class Login extends \Phoenix\MVC\TController {
             $this->response->setToken($token);
             $this->response->setReturn(403);
         }
-    }
-}
+    }	public function createObjects() {	}	public function declareObjects() {	}	public function displayHtml() {?><script>$.jPhoenix.getCSS('http://www.ladmin.loc/app/views/login/login.css');</script><script src='http://www.ladmin.loc/app/controllers/login/login.js'></script>
+    <form class="form-signin" >
+        <h2 class="form-signin-heading">Code Ph&oelig;nix (&alpha;lph&alpha;)</h2>
+      <input class="form-control" type="text" id="login" name="login" placeholder="Identifiant" value="lambda">
+      <input class="form-control" type="password" id="password" name="password" placeholder="Mot de passe" value="1MF14m2p97">
+      <button class="btn btn-lg btn-primary  btn-block" type="button" name="valider" value="ok" id="authenticate" >Valider</button>
+      <div id="message" style="color: red;">
+      </div>
+    </form>
+<div>
+    <?php echo $this->headers; ?>
+</div>
+
+<?php	}}

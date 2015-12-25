@@ -1,5 +1,20 @@
-function logout() {
-    $.jPhoenix.getView('login.html', 'logout', '#core');
+var master = (new TController()).actions({
+    origin : TRegistry.item('/login').origin + '/'
+    , oninit : function () {
+        $("#home").on('click', function() {
+           attachView(master.origin + 'home.html', '#core'); 
+        });
+        $("#passwd").on('click', function() {
+           attachView(master.origin + 'passwordGenerator.html', '#core'); 
+        });
+        $("#sample").on('click', function() {
+           attachView(master.origin + 'accordion.html', '#core'); 
+        });    }
+    , onload : function () {
+        
+    }
+    , logout : function() {
+        $.jPhoenix.getView(master.origin + 'login.html', 'logout', '#core');
 
     
     
@@ -14,4 +29,5 @@ function logout() {
 //        }
 //    });       
     
-}
+    }
+});
