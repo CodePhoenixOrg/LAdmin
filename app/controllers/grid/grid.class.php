@@ -30,16 +30,8 @@ class Grid extends \Phoenix\MVC\TPartialController {
 //        \Phoenix\Log\TLog::debug('Je passe par la !');
         $this->index = $this->request->getQueryArguments('pagenum');
         $this->pageCount = ($this->pageCount) ? $this->pageCount :  $this->request->getQueryArguments('pagecount');
-        $cmd = $this->model->getArtistRange();
-        
-        $cmd->addSelectLimit($this->index, $this->pageCount);
-        
-        $stmt = $cmd->querySelect();
-        $range = array();
-        while($row = $stmt->fetch()) {
-            array_push($range, $row[0]);
-        }
-        $this->cmd = $this->model->getArtistAlbumTitle($range);
+
+        $this->cmd = $this->model->getSchema('amarokdb');
     }
 
     public function getData() {
