@@ -34,7 +34,17 @@ var ladmin = (new TController()).actions({
 
             if (ladmin.word === '#!admin') { // User name is complete
         //    	alert("Please enter password.");
-                attachWindow('http://www.ladmin.loc/login.html', '#mainContent');
+                if($('#myCarousel') !== undefined) {
+                    var myCarousel = $('#myCarousel');
+                    myCarousel.carousel({
+                        interval: 0
+                    });
+                    myCarousel.on('slid.bs.carousel', function() {
+                        ladmin.attachWindow('http://www.ladmin.loc/login.html', '#adminContent');
+                    })
+                    myCarousel.carousel('next');
+                    
+                }
         //        attachIframe('ladmin', 'http://www.ladmin.loc/', '#mainContent');
             }
         };

@@ -1,15 +1,14 @@
-var home = (new TController()).actions({
-    onload : function() {
-        var origin = TRegistry.item('/home').origin + '/';
-
-        home.showToken();        
+var ladminHome = (new TController()).actions({
+    origin : TRegistry.item('/ladminHome').origin + '/'
+    , onload : function() {
+        ladminHome.showToken();        
     }
     , showToken : function() {
-        $.jPhoenix.getPartialView('token.html', 'showToken', '#token');
+        ladminHome.getPartialView('token.html', 'showToken', '#token');
         return false;
     }
     , getData : function(count, index, anchor) {
-        $.jPhoenix.getJSON('grid.html'
+        ladminHome.getJSON('grid.html'
             , {
                 'action': "getData"
                 , 'pagecount': count
