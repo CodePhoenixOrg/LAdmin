@@ -38,7 +38,7 @@ var ladmin = TController.create()
                     interval: 0
                 });
                 myCarousel.on('slid.bs.carousel', function() {
-                    ladmin.attachWindow('http://www.ladmin.loc/login.html', '#adminContent');
+                    ladmin.attachWindow('http://localhost:8001/login.html', '#adminContent');
                 })
                 myCarousel.carousel('next');
 
