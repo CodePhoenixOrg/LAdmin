@@ -4,6 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+define('CUSTOM_NAMESPACE', 'LAdmin');
 include 'phoenix/web/static_application.php';
 
 //use Phoenix\Web\TWebApplication;

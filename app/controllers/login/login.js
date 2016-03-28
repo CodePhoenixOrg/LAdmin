@@ -1,6 +1,7 @@
-var ladminLogin = (new TController()).actions({
-    origin : TRegistry.item('/login.html').origin
-    , onload : function() {
+var ladminLogin = TController.create('login.html')
+.actions({
+    //origin : TRegistry.item('/login.html').origin
+    onload : function() {
         $('#authenticate').on('click', function() {
             ladminLogin.authenticate();
         })
@@ -10,8 +11,8 @@ var ladminLogin = (new TController()).actions({
         var pageName = 'login.html';
         
         //this.origin = TRegistry.item('/login.html').origin + '/';
-        
-        ladminLogin.getJSON((ladminLogin.origin !== undefined) ? ladminLogin.origin + '/' + pageName : pageName
+        //(ladminLogin.origin !== undefined) ? ladminLogin.origin + '/' + pageName : 
+        ladminLogin.getJSON(pageName 
             , {
                 "action" : 'authenticate'
                 ,"login" : $("#login").val()

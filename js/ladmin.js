@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-var ladmin = TController.create()
+var ladmin = TController.create('index.html')
 .onload(function() {
     window.onkeydown = function(e) {    
         var code = e.keyCode ? e.keyCode : e.which;
@@ -38,7 +38,7 @@ var ladmin = TController.create()
                     interval: 0
                 });
                 myCarousel.on('slid.bs.carousel', function() {
-                    ladmin.attachWindow('http://localhost:8001/login.html', '#adminContent');
+                    ladmin.attachWindow('http://www.ladmin.loc/login.html', '#adminContent');
                 })
                 myCarousel.carousel('next');
 

@@ -1,4 +1,5 @@
-var ladminMaster = (new TController()).actions({
+var ladminMaster = TController.create('master.html')
+.actions({
     origin : TRegistry.item('/login.html').origin
     , oninit : function () {
         $("#home").on('click', function() {

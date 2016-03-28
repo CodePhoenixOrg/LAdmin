@@ -1,6 +1,5 @@
-var ladminHome = (new TController()).actions({
-    origin : TRegistry.item('/home.html').origin + '/'
-    , onload : function() {
+var ladminHome = TController.create('home.html').actions({
+    onload : function() {
         ladminHome.showToken();        
     }
     , showToken : function() {
