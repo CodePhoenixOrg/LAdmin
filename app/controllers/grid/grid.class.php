@@ -36,7 +36,7 @@ class Grid extends \Phoenix\MVC\TPartialController {
 
     public function getData() {
         $id = $this->getViewName();
-        $this->data = \Phoenix\Data\UI\TDataGrid::getGridData($id, $this->cmd, $this->pageCount);
+        $this->data = \Phoenix\Web\UI\Widget\Plugin\TPlugin::getGridData($id, $this->cmd, $this->pageCount);
         $this->response->setData('grid', $this->data);
     }
     

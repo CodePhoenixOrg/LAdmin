@@ -1,5 +1,5 @@
-<phx:TDataGrid id="dataGrid"  pattern="accordion" pivot="true" command="var:cmd" columns="var:cols" rowCount="var:pageCount" pageNum="var:index" >
-    <phx:TDataColumn id="cols" name="Database" enabled="true" />
-    <phx:TDataColumn id="cols" name="Table" enabled="true" />
-    <phx:TDataColumn id="cols" name="Column" enabled="true" />
-</phx:TDataGrid>
+<phx:TPlugin id="dataGrid"  pattern="accordion" pivot="true" command="var:cmd" children="var:cols" rowCount="var:pageCount" pageNum="var:index" >
+    <phx:TPluginChild id="cols" name="Database" enabled="true" />
+    <phx:TPluginChild id="cols" name="Table" enabled="true" />
+    <phx:TPluginChild id="cols" name="Column" enabled="true" />
+</phx:TPlugin>
