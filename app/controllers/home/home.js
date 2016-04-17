@@ -1,6 +1,16 @@
 var ladminHome = TController.create('home.html').actions({
     onload : function() {
-        ladminHome.showToken();        
+        var origin = this.getOrigin();
+        
+        TWebObject.getCSS('css/accordion.css');
+        $.getScript((origin !== undefined) ? origin + '/js/accordion.js' : 'js/accordion.js')
+        .done(function( script, textStatus ) {
+            $('.accordion').multiaccordion({defaultIcon: "ui-icon-plusthick", activeIcon: "ui-icon-minusthick"});
+            ladminHome.showToken();
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            console.log(exception);
+        });            
     }
     , showToken : function() {
         ladminHome.getPartialView('token.html', 'showToken', '#token');

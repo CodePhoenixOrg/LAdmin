@@ -28,6 +28,13 @@ var ladminLogin = TController.create('login.html')
                     //$.jPhoenix.getScripts(data);
                 } else if(data.return === 403) {
                     $('#message').html('Login error');
+                } else if(data.return === 1) {
+                    ladminLogin.getView('master.html', function(data) {
+                        TUtils.html64(document.body, data.view);
+                        ladminLogin.getView('home.html', function(data) {
+                           TUtils.html64('#core', data.view);
+                        });
+                    })
                 }
             }
             catch(e) {

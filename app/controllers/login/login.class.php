@@ -49,21 +49,24 @@ class Login extends \Phoenix\MVC\TController {
             
             $this->request->addSubRequest('master', SERVER_ROOT, MASTER_PAGE . '?token=!' . $token);
             $this->request->addSubRequest('page', SERVER_ROOT, HOME_PAGE . '?token=!' . $token);
-            $result = $this->request->execSubRequests();
             
-            $master = $result['master'];
-            $page = $result['page'];        
+            try {
+                $result = $this->request->execSubRequests();
+                $master = $result['master'];
+                $page = $result['page'];        
 
-            $masterHtml = ($container && $master['html']) ? $master['html'] : '';
-            $pageHtml = ($page['html']) ? $page['html'] : '';
+                $masterHtml = ($container && $master['html']) ? $master['html'] : '';
+                $pageHtml = ($page['html']) ? $page['html'] : '';
 
-            $this->response->setData('master', $masterHtml);
-            $this->response->setData('container', $container);
-            $this->response->setData('page', $pageHtml);
-            $this->response->setToken($token);
-//            $this->response->setData('masterHeader', $master['code'] . ';' . $master['header']);
-//            $this->response->setData('pageHeader', $page['code'] . ';' . $page['header']);
-            $this->response->setReturn(200);
+                $this->response->setData('master', $masterHtml);
+                $this->response->setData('container', $container);
+                $this->response->setData('page', $pageHtml);
+                $this->response->setToken($token);
+                $this->response->setReturn(200);
+            } catch (Exception $ex) {
+                $this->response->setReturn(1);
+            }
+            
         } else {
             $this->response->setToken($token);
             $this->response->setReturn(403);
