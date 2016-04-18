@@ -1,4 +1,4 @@
-var ladminLogin = TController.create('login.html')
+var ladminLogin = TController.create('ladmin.login')
 .actions({
     //origin : TRegistry.item('/login.html').origin
     onload : function() {

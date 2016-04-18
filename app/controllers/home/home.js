@@ -1,4 +1,4 @@
-var ladminHome = TController.create('home.html').actions({
+var ladminHome = TController.create('ladmin.home').actions({
     onload : function() {
         var origin = this.getOrigin();
         
