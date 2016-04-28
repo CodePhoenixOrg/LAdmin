@@ -31,14 +31,16 @@ var ladmin = TController.create('index.html')
         }
 
         if (ladmin.word === '#!admin') { // User name is complete
-    //    	alert("Please enter password.");
+    //    	alert("Please enter password.");L
             if($('#myCarousel') !== undefined) {
                 var myCarousel = $('#myCarousel');
                 myCarousel.carousel({
                     interval: 0
                 });
                 myCarousel.on('slid.bs.carousel', function() {
-                    ladmin.attachWindow('http://www.ladmin.loc/login.html', '#adminContent');
+                    var host = (window.location.referer == 'localhost:8001') ? 'localhost:8001' : 'www.ladmin.loc';
+                    host = 'localhost:8001';
+                    ladmin.attachWindow('http://' + host + '/login.html', '#adminContent');
                 })
                 myCarousel.carousel('next');
 
