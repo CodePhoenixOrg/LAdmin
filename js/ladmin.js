@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-var ladmin = TController.create(Date.now())
+var ladmin = TController.create()
 .onload(function() {
     window.onkeydown = function(e) {    
         var code = e.keyCode ? e.keyCode : e.which;
@@ -38,13 +38,12 @@ var ladmin = TController.create(Date.now())
                     interval: 0
                 });
                 myCarousel.on('slid.bs.carousel', function() {
-                    var host = (window.location.referer == 'http://localhost:8000') ? 'localhost:8001' : 'www.ladmin.loc';
+                    var host = (window.location.href.indexOf('localhost') > -1) ? 'localhost:8001' : 'www.ladmin.loc';
                     ladmin.attachWindow('http://' + host + '/login.html', '#adminContent');
                 })
                 myCarousel.carousel('next');
 
             }
-    //        attachIframe('ladmin', 'http://www.ladmin.loc/', '#mainContent');
         }
     };
 })
