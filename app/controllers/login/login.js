@@ -1,4 +1,4 @@
-var ladminLogin = TController.create('ladmin.login')
+var ladminLogin = TController.create()
 .actions({
     //origin : TRegistry.item('/login.html').origin
     onload : function() {
@@ -11,7 +11,10 @@ var ladminLogin = TController.create('ladmin.login')
         var pageName = 'login.html';
         
         //this.origin = TRegistry.item('/login.html').origin + '/';
+        ladminLogin.origin = TRegistry.getOrigin();
+        
         //(ladminLogin.origin !== undefined) ? ladminLogin.origin + '/' + pageName : 
+        
         ladminLogin.getJSON(pageName 
             , {
                 "action" : 'authenticate'
@@ -23,8 +26,8 @@ var ladminLogin = TController.create('ladmin.login')
             try {
 //                window.console.log(data.return);
                 if(data.return === 200) {
-                    $.jPhoenix.html64(document.body, data.master);
-                    $.jPhoenix.html64(data.container, data.page);
+                    TUtils.html64(document.body, data.master);
+                    TUtils.html64(data.container, data.page);
                     //$.jPhoenix.getScripts(data);
                 } else if(data.return === 403) {
                     $('#message').html('Login error');

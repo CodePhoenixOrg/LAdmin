@@ -30,11 +30,14 @@ class Login extends \Phoenix\Web\UI\TControl {
         $this->response->setMessage("logout");
     }
     
-    public function authenticate() {
+    public function authenticate($login, $password, $container) {
         $result = FALSE;
-        $this->_login = $this->request->getQueryArguments('login');
-        $this->_password = $this->request->getQueryArguments('password');
-        $container = $this->request->getQueryArguments('container');
+//        $this->_login = $this->request->getQueryArguments('login');
+//        $this->_password = $this->request->getQueryArguments('password');
+        
+        $this->_login = $login;
+        $this->_password = $password;
+//        $container = $this->request->getQueryArguments('container');
         
         $token = '';
         if($this->_login && $this->_password) {
