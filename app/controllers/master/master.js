@@ -1,21 +1,21 @@
 var ladminMaster = TController.create('master.html')
+.oninit(function () {
+    $("#home").on('click', function() {
+       ladminMaster.attachView('/home.html', '#core'); 
+    });
+    $("#passwd").on('click', function() {
+       ladminMaster.attachView('/passwordGenerator.html', '#core'); 
+    });
+    $("#sample").on('click', function() {
+       ladminMaster.attachView('/accordion.html', '#core'); 
+    });    
+})
+.onload(function () {
+        this.origin = TRegistry.getOrigin();
+})
 .actions({
-    origin : TRegistry.item('/login.html').origin
-    , oninit : function () {
-        $("#home").on('click', function() {
-           ladminMaster.attachView(ladminMaster.origin + '/home.html', '#core'); 
-        });
-        $("#passwd").on('click', function() {
-           ladminMaster.attachView(ladminMaster.origin + '/passwordGenerator.html', '#core'); 
-        });
-        $("#sample").on('click', function() {
-           ladminMaster.attachView(ladminMaster.origin + '/accordion.html', '#core'); 
-        });    }
-    , onload : function () {
-        
-    }
-    , logout : function() {
-        $.jPhoenix.getView(ladminMaster.origin + '/login.html', 'logout', '#core');
+    logout : function() {
+        this.getView('/login.html', 'logout', '#core');
 
     
     

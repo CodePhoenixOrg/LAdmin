@@ -1,13 +1,13 @@
 var ladminLogin = TController.create()
+.onload(function() {
+    $('#authenticate').on('click', function() {
+        ladminLogin.authenticate();
+    })
+
+})
 .actions({
     //origin : TRegistry.item('/login.html').origin
-    onload : function() {
-        $('#authenticate').on('click', function() {
-            ladminLogin.authenticate();
-        })
-        
-    }
-    , authenticate : function () {
+    authenticate : function () {
         var pageName = 'login.html';
         
         //this.origin = TRegistry.item('/login.html').origin + '/';

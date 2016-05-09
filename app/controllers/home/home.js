@@ -1,18 +1,19 @@
-var ladminHome = TController.create('ladmin.home').actions({
-    onload : function() {
-        var origin = this.getOrigin();
-        
-        TWebObject.getCSS('css/accordion.css');
-        $.getScript((origin !== undefined) ? origin + '/js/accordion.js' : 'js/accordion.js')
-        .done(function( script, textStatus ) {
-            $('.accordion').multiaccordion({defaultIcon: "ui-icon-plusthick", activeIcon: "ui-icon-minusthick"});
-            ladminHome.showToken();
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log(exception);
-        });            
-    }
-    , showToken : function() {
+var ladminHome = TController.create('ladmin.home')
+.onload(function() {
+    var origin = this.getOrigin();
+
+    TWebObject.getCSS('css/accordion.css');
+    $.getScript((origin !== undefined) ? origin + '/js/accordion.js' : 'js/accordion.js')
+    .done(function( script, textStatus ) {
+        $('.accordion').multiaccordion({defaultIcon: "ui-icon-plusthick", activeIcon: "ui-icon-minusthick"});
+        ladminHome.showToken();
+    })
+    .fail(function( jqxhr, settings, exception ) {
+        console.log(exception);
+    });            
+})
+.actions({
+    showToken : function() {
         ladminHome.getPartialView('token.html', 'showToken', '#token');
         return false;
     }
@@ -24,7 +25,7 @@ var ladminHome = TController.create('ladmin.home').actions({
                 , 'pagenum': index
             }
             , function (data) {
-                $.jPhoenix.bindTable('#grid', data.grid.values, data.grid.templates);
+                TTable.bind('#grid', data.grid.values, data.grid.templates);
                 $(anchor).html(index);
             }
         );

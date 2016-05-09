@@ -1,5 +1,8 @@
-<phx:TPlugin id="dataGrid"  pattern="accordion" pivot="true" command="var:cmd" children="var:cols" rowCount="var:pageCount" pageNum="var:index" >
-    <phx:TPluginChild id="cols" name="Database" enabled="true" />
-    <phx:TPluginChild id="cols" name="Table" enabled="true" />
-    <phx:TPluginChild id="cols" name="Column" enabled="true" />
-</phx:TPlugin>
+<div id="grid">
+    <phx:TPlugin id="accordion0"  pattern="accordion" pivot="true" command="var:cmd" children="var:cols" rowCount="var:pageCount" pageNum="var:index" >
+        <phx:TPluginChild id="cols" name="Database" enabled="true" />
+        <phx:TPluginChild id="cols" name="Table" enabled="true" />
+        <phx:TPluginChild id="cols" name="Column" enabled="true" />
+    </phx:TPlugin>
+</div>
+<phx:TPager id="pager" for="accordion0" caption="Tables"  onclick="ladminHome.getData" />
