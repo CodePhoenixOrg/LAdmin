@@ -12,7 +12,7 @@ var ladminLogin = TController.create()
         
         //this.origin = TRegistry.item('/login.html').origin + '/';
         ladminLogin.origin = TRegistry.getOrigin();
-        
+        this.origin = TRegistry.getOrigin();
         //(ladminLogin.origin !== undefined) ? ladminLogin.origin + '/' + pageName : 
         
         ladminLogin.getJSON(pageName 

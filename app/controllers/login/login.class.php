@@ -50,8 +50,8 @@ class Login extends \Phoenix\MVC\TController {
         if($result) {
             \Phoenix\Log\TLog::debug('result OK');
             
-            $this->request->addSubRequest('master', SERVER_ROOT, MASTER_PAGE . '?token=!' . $token);
-            $this->request->addSubRequest('page', SERVER_ROOT, HOME_PAGE . '?token=!' . $token);
+            $this->request->addSubRequest('master', SERVER_ROOT . MASTER_PAGE, ['token' => $token]);
+            $this->request->addSubRequest('page', SERVER_ROOT . HOME_PAGE, ['token' => $token]);
             
             try {
                 $result = $this->request->execSubRequests();
