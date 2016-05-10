@@ -66,7 +66,7 @@ class Login extends \Phoenix\MVC\TController {
                 $this->response->setData('page', $pageHtml);
                 $this->response->setToken($token);
                 $this->response->setReturn(200);
-            } catch (Exception $ex) {
+            } catch (\Exception $ex) {
                 $this->response->setReturn(1);
             }
             
