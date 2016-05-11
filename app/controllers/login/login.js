@@ -32,9 +32,18 @@ var ladminLogin = TController.create()
                 } else if(data.return === 403) {
                     $('#message').html('Login error');
                 } else if(data.return === 1) {
+                    TRegistry.setToken(data.token);
+                    $('#adminContent').append(TRegistry.getOrigin() + '<br />') ;
+                    $('#adminContent').append(TRegistry.getToken() + '<br />');
                     ladminLogin.getView('master.html', function(data) {
+                        TRegistry.setToken(data.token);
+                        $('#adminContent').append(TRegistry.getOrigin() + '<br />') ;
+                        $('#adminContent').append(TRegistry.getToken() + '<br />');
                         TUtils.html64(document.body, data.view);
                         ladminLogin.getView('home.html', function(data) {
+                           TRegistry.setToken(data.token);
+                           $('#adminContent').append(TRegistry.getOrigin() + '<br />') ;
+                           $('#adminContent').append(TRegistry.getToken() + '<br />');
                            TUtils.html64('#core', data.view);
                         });
                     })
