@@ -1,4 +1,4 @@
-var ladminHome = TController.create('ladmin.home')
+var ladminHome = ladmin.createController(ladmin.index, 'ladmin.home')
 .onload(function() {
     var origin = this.getOrigin();
 

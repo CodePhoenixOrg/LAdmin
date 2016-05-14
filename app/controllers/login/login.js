@@ -1,4 +1,4 @@
-var ladminLogin = TController.create()
+var ladminLogin = ladmin.createController(ladmin.index, 'ladmin.login') 
 .onload(function() {
     $('#authenticate').on('click', function() {
         ladminLogin.authenticate();

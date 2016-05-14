@@ -1,4 +1,4 @@
-var ladminMaster = TController.create('master.html')
+var ladminMaster = ladmin.createController(ladmin.index, 'ladmin.master')
 .oninit(function () {
     $("#home").on('click', function() {
        ladminMaster.attachView('/home.html', '#core'); 

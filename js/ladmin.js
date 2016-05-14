@@ -3,34 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+var ladmin = TWebApplication.create('www.ladmin.loc');
+ladmin.index = ladmin.createView('index');
 
-var ladmin = TController.create()
+var ladminIndex = ladmin.createController(ladmin.index, 'ladmin.index')
 .onload(function() {
     window.onkeydown = function(e) {    
         var code = e.keyCode ? e.keyCode : e.which;
 
         if(code === 27) { // ESC is typed
-            ladmin.word = '';
-            console.log("ladmin.word = '" + ladmin.word + "'");
+            ladminIndex.word = '';
+            console.log("ladminIndex.word = '" + ladminIndex.word + "'");
         }
     };
 
     window.onkeypress = function(e) {    
         var code = e.keyCode ? e.keyCode : e.which;
 
-        if (code === 35 && ladmin.word === '') { // # is typed
-            ladmin.word += String.fromCharCode(code);
-            console.log("ladmin.word = '" + ladmin.word + "'");
-        } else if (code === 33 && ladmin.word === '#') { // ! is typed
-            ladmin.word += String.fromCharCode(code);
-            this.isLoggingIn = true; // trying to log in as administrator
-            console.log("ladmin.word = '" + ladmin.word + "'");
-        } else if (this.isLoggingIn) {
-            ladmin.word += String.fromCharCode(code);
-            console.log("ladmin.word = '" + ladmin.word + "'");
+        if (code === 35 && ladminIndex.word === '') { // # is typed
+            ladminIndex.word += String.fromCharCode(code);
+            console.log("ladminIndex.word = '" + ladminIndex.word + "'");
+        } else if (code === 33 && ladminIndex.word === '#') { // ! is typed
+            ladminIndex.word += String.fromCharCode(code);
+            ladminIndex.isLoggingIn = true; // trying to log in as administrator
+            console.log("ladminIndex.word = '" + ladminIndex.word + "'");
+        } else if (ladminIndex.isLoggingIn) {
+            ladminIndex.word += String.fromCharCode(code);
+            console.log("ladminIndex.word = '" + ladminIndex.word + "'");
         }
 
-        if (ladmin.word === '#!admin') { // User name is complete
+        if (ladminIndex.word === '#!admin') { // User name is complete
     //    	alert("Please enter password.");L
             if($('#myCarousel') !== undefined) {
                 var myCarousel = $('#myCarousel');
@@ -39,7 +41,7 @@ var ladmin = TController.create()
                 });
                 myCarousel.on('slid.bs.carousel', function() {
                     var host = (window.location.href.indexOf('localhost') > -1) ? 'localhost:8001' : 'www.ladmin.loc';
-                    ladmin.attachWindow('http://' + host + '/login.html', '#adminContent');
+                    ladminIndex.attachWindow('http://' + host + '/login.html', '#adminContent');
                 })
                 myCarousel.carousel('next');
 

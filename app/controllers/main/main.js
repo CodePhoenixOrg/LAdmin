@@ -1,5 +1,6 @@
+ladmin.main = ladmin.createView('main');
 
-var ladminMain = TController.create('main.html')
+var ladminMain = ladmin.createController(ladmin.main, 'ladmin.main')
 .actions({
     onload : function () {
         ladminMain.getView('login.html');
