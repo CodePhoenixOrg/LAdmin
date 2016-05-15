@@ -36,13 +36,13 @@ var ladminLogin = ladmin.createController(ladmin.index, 'ladmin.login')
                 } else if(data.return === 1) {
                     $('#adminContent').append(TRegistry.getOrigin() + '<br />') ;
                     $('#adminContent').append(TRegistry.getToken() + '<br />');
-	                  //the.attachView('master.html', document.body, function(data) {
-					        the.getView('master.html', function(data) {
-					            $('#adminContent').html(data.view);
-					            the.getView('home.html', function(data) {
-					                $('#core').html(data.view);
-					            })
-					        });
+                        //the.attachView('master.html', document.body, function(data) {
+                        the.getView('master.html', function(data) {
+                            $('#adminContent').html(data.view);
+                            the.getView('home.html', function(data) {
+                                $('#core').html(data.view);
+                            })
+                        });
                 }
             }
             catch(e) {

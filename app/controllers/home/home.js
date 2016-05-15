@@ -1,7 +1,8 @@
 var ladminHome = ladmin.createController(ladmin.index, 'ladmin.home')
 .onload(function() {
     var origin = this.getOrigin();
-
+    TRegistry.item(this.name).token = this.getToken();
+    
     TWebObject.getCSS('css/accordion.css');
     $.getScript((origin !== undefined) ? origin + '/js/accordion.js' : 'js/accordion.js')
     .done(function( script, textStatus ) {
@@ -14,8 +15,15 @@ var ladminHome = ladmin.createController(ladmin.index, 'ladmin.home')
 })
 .actions({
     showToken : function() {
-        ladminHome.getPartialView('token.html', 'showToken', '#token');
-        return false;
+        var token = TRegistry.item(this.name).token;
+
+        this.getPartialView('token.html', 'showToken', '#token', {'token': token}, function(data) {
+            $("#tokenLink").on("click", function() {
+                ladminHome.showToken();
+            });
+            
+        });
+        return false;        
     }
     , getData : function(count, index, anchor) {
         ladminHome.getJSON('grid.html'
