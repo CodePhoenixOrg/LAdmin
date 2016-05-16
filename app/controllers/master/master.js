@@ -9,6 +9,13 @@ var ladminMaster = ladmin.createController(ladmin.index, 'ladmin.master')
     $("#sample").on('click', function() {
        ladminMaster.attachView('/accordion.html', '#core'); 
     });    
+    $("#logout").on('click', function() {
+       ladminMaster.attachView('/login.html', '#adminContent'); 
+    });
+    $("#disconnect").on('click', function() {
+       ladminMaster.attachWindow('/login.html'); 
+    });    
+    
 })
 .onload(function () {
         this.origin = TRegistry.getOrigin();

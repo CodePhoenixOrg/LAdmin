@@ -1,17 +1,12 @@
 var ladminHome = ladmin.createController(ladmin.index, 'ladmin.home')
 .onload(function() {
-    var origin = this.getOrigin();
     TRegistry.item(this.name).token = this.getToken();
     
     TWebObject.getCSS('css/accordion.css');
-    $.getScript((origin !== undefined) ? origin + '/js/accordion.js' : 'js/accordion.js')
-    .done(function( script, textStatus ) {
+    this.getScript('js/accordion.js', function() {
         $('.accordion').multiaccordion({defaultIcon: "ui-icon-plusthick", activeIcon: "ui-icon-minusthick"});
         ladminHome.showToken();
-    })
-    .fail(function( jqxhr, settings, exception ) {
-        console.log(exception);
-    });            
+    });
 })
 .actions({
     showToken : function() {
@@ -26,7 +21,7 @@ var ladminHome = ladmin.createController(ladmin.index, 'ladmin.home')
         return false;        
     }
     , getData : function(count, index, anchor) {
-        ladminHome.getJSON('grid.html'
+        this.getJSON('grid.html'
             , {
                 'action': "getData"
                 , 'pagecount': count

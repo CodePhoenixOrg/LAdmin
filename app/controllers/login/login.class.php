@@ -32,12 +32,9 @@ class Login extends \Phoenix\MVC\TController {
     
     public function authenticate($login, $password, $container) {
         $result = FALSE;
-//        $this->_login = $this->request->getQueryArguments('login');
-//        $this->_password = $this->request->getQueryArguments('password');
         
         $this->_login = $login;
         $this->_password = $password;
-//        $container = $this->request->getQueryArguments('container');
         
         $token = '';
         if($this->_login && $this->_password) {
@@ -45,13 +42,10 @@ class Login extends \Phoenix\MVC\TController {
         }
         $result = ($token) ? 1 : 0;
             
-        \Phoenix\Log\TLog::debug('token : ' . $token);
-
         if($result) {
-            \Phoenix\Log\TLog::debug('result OK');
             
-            $this->request->addSubRequest('master', SERVER_ROOT . MASTER_PAGE, ['token' => $token]);
-            $this->request->addSubRequest('page', SERVER_ROOT . HOME_PAGE, ['token' => $token]);
+            $this->request->addViewSubRequest('master', SERVER_ROOT . MASTER_PAGE, ['token' => $token]);
+            $this->request->addViewSubRequest('page', SERVER_ROOT . HOME_PAGE, ['token' => $token]);
             
             try {
                 $result = $this->request->execSubRequests();
