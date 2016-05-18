@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var ladmin = TWebApplication.create('www.ladmin.loc');
+var host = (window.location.href.indexOf('localhost') > -1) ? 'localhost:8001' : 'www.ladmin.loc';
+var ladmin = TWebApplication.create(host);
 ladmin.index = ladmin.createView('index');
 
 var ladminIndex = ladmin.createController(ladmin.index, 'ladmin.index')
@@ -40,7 +41,6 @@ var ladminIndex = ladmin.createController(ladmin.index, 'ladmin.index')
                     interval: 0
                 });
                 myCarousel.on('slid.bs.carousel', function() {
-                    var host = (window.location.href.indexOf('localhost') > -1) ? 'localhost:8001' : 'www.ladmin.loc';
                     ladminIndex.attachWindow('http://' + host + '/login.html', '#adminContent');
                 })
                 myCarousel.carousel('next');

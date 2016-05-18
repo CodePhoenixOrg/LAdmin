@@ -37,9 +37,7 @@ var ladminLogin = ladmin.createController(ladmin.index, 'ladmin.login')
                     //$.jPhoenix.getScripts(data);
                 } else if(data.return === 403) {
                     $('#message').html('Login error');
-                } else if(data.return === 1) {
-                    $('#adminContent').append(TRegistry.getOrigin() + '<br />') ;
-                    $('#adminContent').append(TRegistry.getToken() + '<br />');
+                } else if(data.return === 202) {
                     //the.attachView('master.html', document.body, function(data) {
                     the.getView('master.html', function(data) {
                         $('#adminContent').html(data.view);
