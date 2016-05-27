@@ -1,5 +1,5 @@
 <?php
 namespace Detroit\Models;
 
-class Home extends \Phoenix\MVC\TModel {
+class Home extends \Phink\MVC\TModel {
 }

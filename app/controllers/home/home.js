@@ -40,7 +40,7 @@ var ladminHome = ladmin.createController(ladmin.index, 'ladmin.home')
 
 
 //$(document).ready(function () {
-//    $.jPhoenix.getCSS("/css/accordion.css");
+//    $.jPhink.getCSS("/css/accordion.css");
 //    $.getScript("/js/accordion.js")
 //    .done(function( script, textStatus ) {
 //        $(".accordion").multiaccordion({defaultIcon: "ui-icon-plusthick", activeIcon: "ui-icon-minusthick"});

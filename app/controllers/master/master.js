@@ -26,11 +26,11 @@ var ladminMaster = ladmin.createController(ladmin.index, 'ladmin.master')
 
     
     
-//    $.jPhoenix.getJSON("login.html"
+//    $.jPhink.getJSON("login.html"
 //        , {"action" : 'logout'}
 //        , function(data) {
 //        try {
-//            $.jPhoenix.getView('login.html');
+//            $.jPhink.getView('login.html');
 //        }
 //        catch(e) {
 //            debugLog(e);

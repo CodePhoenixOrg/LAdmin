@@ -6,7 +6,7 @@ namespace Detroit\Controllers;
  *
  * @author david
  */
-class Login extends \Phoenix\MVC\TController {
+class Login extends \Phink\MVC\TController {
     //put your code here
     
     private $_login = '';

@@ -7,7 +7,7 @@ namespace Detroit\Controllers;
  * @author david
  */
 
- class Home extends \Phoenix\MVC\TController {
+ class Home extends \Phink\MVC\TController {
     //put your code here
 
     protected $dummy;

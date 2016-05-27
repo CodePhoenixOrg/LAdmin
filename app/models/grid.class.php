@@ -1,18 +1,18 @@
 <?php
 
 
-namespace Ladmin\Models;
-//require_once 'phoenix/mvc/model.php';
-//require_once 'phoenix/auth/authentication.php';
+namespace LAdmin\Models;
+//require_once 'phink/mvc/model.php';
+//require_once 'phink/auth/authentication.php';
 require_once APP_DATA . 'info_schema_connection.php';
 
 
-class Grid extends \Phoenix\MVC\TModel
+class Grid extends \Phink\MVC\TModel
 {
 
     public function init()
     {
-        $this->connector = new \Ladmin\Data\InfoSchemaConnection();
+        $this->connector = new \LAdmin\Data\InfoSchemaConnection();
         $this->connector->open();
     }
 
@@ -29,7 +29,7 @@ WHERE
     table_schema = '$schema';
 SELECT;
 
-        $cmd = new \Phoenix\Data\Client\PDO\TPdoCommand($this->connector);
+        $cmd = new \Phink\Data\Client\PDO\TPdoCommand($this->connector);
         $cmd->setSelectQuery($sql);
 
         return $cmd;

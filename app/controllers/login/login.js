@@ -34,7 +34,7 @@ var ladminLogin = ladmin.createController(ladmin.index, 'ladmin.login')
                         });
                     });
 
-                    //$.jPhoenix.getScripts(data);
+                    //$.jPhink.getScripts(data);
                 } else if(data.return === 403) {
                     $('#message').html('Login error');
                 } else if(data.return === 202) {
