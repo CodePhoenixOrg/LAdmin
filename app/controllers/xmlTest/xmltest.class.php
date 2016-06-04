@@ -1,6 +1,6 @@
 <?php
 
-namespace Detroit\Controllers;
+namespace LAdmin\Controllers;
 
 /**
  * Description of xmlTest

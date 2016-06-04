@@ -1,5 +1,5 @@
 <?php
-namespace Detroit\Controllers;
+namespace LAdmin\Controllers;
 
 //require_once 'phink/mvc/controller.php';
 //require_once 'phink/core/log.php';

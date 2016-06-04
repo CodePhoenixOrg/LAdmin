@@ -2,7 +2,7 @@
 
 require_once 'phink/core/application.php';
 
-//namespace Detroit\App\Webservices;
+//namespace LAdmin\App\Webservices;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

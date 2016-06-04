@@ -1,5 +1,5 @@
 <?php
-namespace Detroit\Controllers;
+namespace LAdmin\Controllers;
 
 class Grid extends \Phink\MVC\TPartialController {
 

@@ -1,5 +1,5 @@
 <?php
-namespace Detroit\Controllers;
+namespace LAdmin\Controllers;
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.

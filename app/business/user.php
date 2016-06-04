@@ -13,7 +13,7 @@ use Phink\Data\Client\PDO\TPdoCommand;
 
 require_once APP_DATA . 'connection.php';
 
-use Detroit\Data\Connection;
+use LAdmin\Data\Connection;
 
 /**
  * Description of user

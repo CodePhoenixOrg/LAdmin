@@ -1,5 +1,5 @@
 <?php
-namespace Detroit\Models;
+namespace LAdmin\Models;
 
 class Home extends \Phink\MVC\TModel {
 }
