@@ -1,4 +1,4 @@
-var accordion = phox.createController(ladmin.index, 'ladmin.accordion')
+var accordion = ladmin.createController(ladmin.index, 'ladmin.accordion')
 .onload(function() {
     TWebObject.getCSS('css/accordion.css');
     this.getScript('js/accordion.js', function() {

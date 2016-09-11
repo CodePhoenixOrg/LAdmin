@@ -52,8 +52,8 @@ class Login extends \Phink\MVC\TController {
                 $master = $result['master'];
                 $page = $result['page'];        
 
-                $masterHtml = ($container && $master['html']) ? $master['html'] : '';
-                $pageHtml = ($page['html']) ? $page['html'] : '';
+                $masterHtml = ($container && $master->html) ? $master->html : '';
+                $pageHtml = ($page->html) ? $page->html : '';
 
                 $this->response->setData('master', $masterHtml);
                 $this->response->setData('container', $container);

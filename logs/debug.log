@@ -1,88 +1,0 @@
-
-2016-05-09 01:15:59: : Phoenix\Auth\TAuthentication::renewToken::TOKEN::MjU3MzY1NjU5NTcyZmM4YTkyNTNiNQ==2016-05-09 01:15:59: : Phoenix\Web\TResponse::setToken::TOKEN::MTM0OTQyMzg2MTU3MmZjOGFmYTQ5NDc=2016-05-09 01:15:59: : OPEN PhoenixConnection : Detroit\Data\PhoenixConnection Object
-(
-    [_state:Phoenix\Data\Client\PDO\TPdoConnection:private] => PDO Object
-        (
-        )
-
-    [_sqlConfig:Phoenix\Data\Client\PDO\TPdoConnection:private] => Phoenix\Data\Client\PDO\TPdoConfiguration Object
-        (
-            [_driver:Phoenix\Configuration\Data\TDataConfiguration:private] => mysql
-            [_host:Phoenix\Configuration\Data\TDataConfiguration:private] => localhost
-            [_databaseName:Phoenix\Configuration\Data\TDataConfiguration:private] => phoenix
-            [_user:Phoenix\Configuration\Data\TDataConfiguration:private] => coder
-            [_password:Phoenix\Configuration\Data\TDataConfiguration:private] => 1p2+ar
-            [_port:Phoenix\Configuration\Data\TDataConfiguration:private] => 0
-            [parent:protected] => 
-            [_reflection:Phoenix\Core\TObject:private] => 
-            [id:protected] => noname
-            [serialFilename:protected] => 
-            [isSerialized:protected] => 
-            [children:protected] => Array
-                (
-                )
-
-            [fqClassName:protected] => 
-        )
-
-    [_dsn:Phoenix\Data\Client\PDO\TPdoConnection:private] => mysql:host=localhost;dbname=phoenix
-    [_params:Phoenix\Data\Client\PDO\TPdoConnection:private] => Array
-        (
-            [1002] => SET NAMES utf8
-        )
-
-    [parent:protected] => 
-    [_reflection:Phoenix\Core\TObject:private] => 
-    [id:protected] => noname
-    [serialFilename:protected] => 
-    [isSerialized:protected] => 
-    [children:protected] => Array
-        (
-        )
-
-    [fqClassName:protected] => 
-)
-2016-05-09 01:15:59: : Phoenix\Web\TResponse::setToken::TOKEN::MTM0OTQyMzg2MTU3MmZjOGFmYTQ5NDc=2016-05-09 01:16:01: : Phoenix\Auth\TAuthentication::renewToken::TOKEN::MTM0OTQyMzg2MTU3MmZjOGFmYTQ5NDc=2016-05-09 01:16:01: : Phoenix\Web\TResponse::setToken::TOKEN::NjY0MDMzMDA5NTcyZmM4YjE3NmQ3Yg==2016-05-09 01:16:01: : OPEN PhoenixConnection : Detroit\Data\PhoenixConnection Object
-(
-    [_state:Phoenix\Data\Client\PDO\TPdoConnection:private] => PDO Object
-        (
-        )
-
-    [_sqlConfig:Phoenix\Data\Client\PDO\TPdoConnection:private] => Phoenix\Data\Client\PDO\TPdoConfiguration Object
-        (
-            [_driver:Phoenix\Configuration\Data\TDataConfiguration:private] => mysql
-            [_host:Phoenix\Configuration\Data\TDataConfiguration:private] => localhost
-            [_databaseName:Phoenix\Configuration\Data\TDataConfiguration:private] => phoenix
-            [_user:Phoenix\Configuration\Data\TDataConfiguration:private] => coder
-            [_password:Phoenix\Configuration\Data\TDataConfiguration:private] => 1p2+ar
-            [_port:Phoenix\Configuration\Data\TDataConfiguration:private] => 0
-            [parent:protected] => 
-            [_reflection:Phoenix\Core\TObject:private] => 
-            [id:protected] => noname
-            [serialFilename:protected] => 
-            [isSerialized:protected] => 
-            [children:protected] => Array
-                (
-                )
-
-            [fqClassName:protected] => 
-        )
-
-    [_dsn:Phoenix\Data\Client\PDO\TPdoConnection:private] => mysql:host=localhost;dbname=phoenix
-    [_params:Phoenix\Data\Client\PDO\TPdoConnection:private] => Array
-        (
-            [1002] => SET NAMES utf8
-        )
-
-    [parent:protected] => 
-    [_reflection:Phoenix\Core\TObject:private] => 
-    [id:protected] => noname
-    [serialFilename:protected] => 
-    [isSerialized:protected] => 
-    [children:protected] => Array
-        (
-        )
-
-    [fqClassName:protected] => 
-)
-2016-05-09 01:16:01: : getPermission : NTIxNjY2MTcwNTcyZmM4YjE5OWE1MQ==2016-05-09 01:16:01: : token : NTIxNjY2MTcwNTcyZmM4YjE5OWE1MQ==2016-05-09 01:16:01: : result OK2016-05-09 01:16:01: : Phoenix\Auth\TAuthentication::renewToken::TOKEN::!NTIxNjY2MTcwNTcyZmM4YjE5OWE1MQ==2016-05-09 01:16:01: : Phoenix\Web\TResponse::setToken::TOKEN::!NTIxNjY2MTcwNTcyZmM4YjE5OWE1MQ==2016-05-09 01:16:01: : Phoenix\Auth\TAuthentication::renewToken::TOKEN::!NTIxNjY2MTcwNTcyZmM4YjE5OWE1MQ==2016-05-09 01:16:01: : Phoenix\Web\TResponse::setToken::TOKEN::!NTIxNjY2MTcwNTcyZmM4YjE5OWE1MQ==2016-05-09 01:16:01: : Phoenix\Web\TResponse::setToken::TOKEN::NTIxNjY2MTcwNTcyZmM4YjE5OWE1MQ==2016-05-09 01:16:01: : Phoenix\Web\TResponse::setToken::TOKEN::NTIxNjY2MTcwNTcyZmM4YjE5OWE1MQ==

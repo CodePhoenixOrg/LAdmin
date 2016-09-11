@@ -1,19 +1,24 @@
 var ladminMaster = ladmin.createController(ladmin.index, 'ladmin.master')
 .oninit(function () {
-    $("#home").on('click', function() {
-       ladminMaster.attachView('/home.html', '#core'); 
+    $("#home").on('click', function(e) {
+        e.preventDefault();
+        ladminMaster.attachView('/home.html', '#core'); 
     });
-    $("#passwd").on('click', function() {
-       ladminMaster.attachView('/passwordGenerator.html', '#core'); 
+    $("#passwd").on('click', function(e) {
+        e.preventDefault();
+        ladminMaster.attachView('/passwordGenerator.html', '#core'); 
     });
-    $("#sample").on('click', function() {
-       ladminMaster.attachView('/accordion.html', '#core'); 
+    $("#sample").on('click', function(e) {
+        e.preventDefault();
+        ladminMaster.attachView('/accordion.html', '#core'); 
     });    
-    $("#logout").on('click', function() {
-       ladminMaster.attachView('/login.html', '#adminContent'); 
+    $("#logout").on('click', function(e) {
+        e.preventDefault();
+        ladminMaster.attachView('/login.html', '#adminContent'); 
     });
-    $("#disconnect").on('click', function() {
-       ladminMaster.attachWindow('/login.html'); 
+    $("#disconnect").on('click', function(e) {
+        e.preventDefault();
+        ladminMaster.attachWindow('/login.html'); 
     });    
     
 })
@@ -22,7 +27,7 @@ var ladminMaster = ladmin.createController(ladmin.index, 'ladmin.master')
 })
 .actions({
     logout : function() {
-        this.getView('/login.html', 'logout', '#core');
+        this.getSimpleView('/login.html', 'logout', '#core');
 
     
     
@@ -30,7 +35,7 @@ var ladminMaster = ladmin.createController(ladmin.index, 'ladmin.master')
 //        , {"action" : 'logout'}
 //        , function(data) {
 //        try {
-//            $.jPhink.getView('login.html');
+//            $.jPhink.getSimpleView('login.html');
 //        }
 //        catch(e) {
 //            debugLog(e);

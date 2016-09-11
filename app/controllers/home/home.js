@@ -2,11 +2,11 @@ var ladminHome = ladmin.createController(ladmin.index, 'ladmin.home')
 .onload(function() {
     TRegistry.item(this.name).token = this.getToken();
     
-    TWebObject.getCSS('css/accordion.css');
-    this.getScript('js/accordion.js', function() {
-        $('.accordion').multiaccordion({defaultIcon: "ui-icon-plusthick", activeIcon: "ui-icon-minusthick"});
-        ladminHome.showToken();
-    });
+//    TWebObject.getCSS('css/accordion.css');
+//    this.getScript('js/accordion.js', function() {
+//        $('.accordion').multiaccordion({defaultIcon: "ui-icon-plusthick", activeIcon: "ui-icon-minusthick"});
+//        ladminHome.showToken();
+//    });
 })
 .actions({
     showToken : function() {

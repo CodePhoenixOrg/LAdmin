@@ -39,9 +39,9 @@ var ladminLogin = ladmin.createController(ladmin.index, 'ladmin.login')
                     $('#message').html('Login error');
                 } else if(data.return === 202) {
                     //the.attachView('master.html', document.body, function(data) {
-                    the.getView('master.html', function(data) {
+                    the.getSimpleView('master.html', function(data) {
                         $('#adminContent').html(data.view);
-                        the.getView('home.html', function(data) {
+                        the.getSimpleView('home.html', function(data) {
                             $('#core').html(data.view);
                         })
                     });
