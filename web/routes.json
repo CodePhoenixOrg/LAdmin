@@ -1,0 +1,19 @@
+{
+    "web": {
+        "get": {
+            "/$": "/views/main.phtml",
+            "/admin.html$": "/views/home.phtml",
+            "/login.html$": "/views/login.phtml"
+        },
+        "post": {
+            "/master.html$": "/views/master.phtml",
+            "/home.html$": "/views/home.phtml",
+            "/login.html$": "/views/login.phtml",
+            "/backoff.html$": "/views/backoff.phtml",
+            "/passwordGenerator.html$": "/views/passwordGenerator.phtml",
+            "/accordion.html$": "/views/accordion.phtml",
+            "/?XDEBUG_SESSION_START=netbeans-xdebug$": "/views/main.phtml",
+            "/login.html?XDEBUG_SESSION_START=netbeans-xdebug$": "/views/login.phtml"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+web/js/console.js
+web/js/debug.js
+web/js/jphink.js
+logs/debug.log
+nbproject/private/config.properties
+vendor
+web/bower_components
+web/js/runtime
+web/js/_3rdparty.js
+web/css/_3rdparty.css
+runtime
