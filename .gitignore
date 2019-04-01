@@ -2,7 +2,7 @@ web/js/console.js
 web/js/debug.js
 web/js/jphink.js
 logs/debug.log
-nbproject/private/config.properties
+nbproject
 vendor
 web/bower_components
 web/js/runtime
